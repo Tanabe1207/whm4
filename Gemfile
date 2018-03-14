@@ -39,6 +39,15 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+
+#ここから下５つはwhmからコピペ
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
+
+  gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'
+
 end
 
 group :development do
