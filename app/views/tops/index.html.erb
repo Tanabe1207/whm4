@@ -1,2 +1,47 @@
-<h1>Tops#index</h1>
-<p>Find me in app/views/tops/index.html.erb</p>
+
+<div class="main">
+  <div class="offer">
+    <#% @offers.each do |offer| %>
+    <!-- 募集案件 -->
+    <div class="row">
+      <div class="col-md-6 offer_container" >
+        <h3 class="offer_title">
+          <#%= offer.user.title %>
+        </h3>
+        <div class="media"> <!-- http://bootstrap3.cyberlab.info/components/mediaObject.html#usage1 -->
+          <div class="media-left"> <!--  -->
+            <div class="my_image">
+              <%= link_to my_page_path(a: user_id) do %>
+              <%= image_tag offer.my_image.url %>
+              <#% end %>
+            </div>
+            <div class="flag">
+              <#% case offer.user.nationality %>
+              <#% when "Japan", image_tag 'icons/flag/jpn.png' %>
+              <#% when "Korea", image_tag 'icons/flag/kre.png' %>
+              <#% when "Taiwan", image_tag 'icons/flag/twn.png' %>
+              <#% when "Hong Kong", image_tag 'icons/flag/hkn.png' %>
+              <#% when "China", image_tag 'icons/flag/chn.png' %>
+              <#% when "Australia", image_tag 'icons/flag/aus.png' %>
+              <#% when "New Zealand", image_tag 'icons/flag/nzl.png' %>
+              <#% when "France", image_tag 'icons/flag/fra.png' %>
+              <#% when "German", image_tag 'icons/flag/gmn.png' %>
+              <#% when "Nederland", image_tag 'icons/flag/ndl.png' %>
+              <#% end %>
+            </div>
+            <!-- nationalityに応じた旗を表示 -->
+          </div>
+          <!-- media-left -->
+          <div class="offer_name">
+            <%= offer.user.nickname %>
+          </div>
+          <div class="media-body">
+          </div>
+
+        </div>
+        <!-- media -->
+      </div>
+    </div>
+    <#% end %>
+  </div>
+</div>

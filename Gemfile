@@ -46,6 +46,8 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
 
+  gem 'bootstrap-sass'
+
   gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'
 
 end

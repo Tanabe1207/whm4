@@ -1,14 +1,74 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Whm3</title>
-    <%= csrf_meta_tags %>
+    <title>Working Holiday Mate</title>
+    <%= csrf_meta_tags %> <!-- クロスサイトリクエストフォージェリ(CSRF)の対策のために記述する。 -->
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <nav class="navber navber-default navber-fixed-top navber-transparent">
+
+      <div class="ber_container">
+            <%= link_to root_path do %>
+              <span><%= image_tag 'icons/logo.png', class:'navber-brand' %></span>
+            <% end %>
+            <ul class="nav navber-nav navber-right">
+              <% if logged_in? %><!-- "?"は真偽値を返す-->
+                  <li>
+                    <%= link_to '#' do %>
+                      <%= image_tag 'icons/offer.png' %><!--投稿-->
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to '#' do %>
+                      <%= image_tag 'icons/my_page.png' %><!--マイページ-->
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to '#' do %>
+                      <%= image_tag 'icons/message.png' %><!--メッセージ-->
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to logout_path, method: :delete do %>
+                      <%= image_tag 'icons/logout.png' %><!--ログアウト-->
+                    <% end %>
+                  </li>
+              <% else %>
+                  <li>
+                    <%= link_to new_user_path do %>
+                      <%= image_tag 'icons/register.png' %>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to login_path do %>
+                      <%= image_tag 'icons/login.png' %>
+                    <% end %>
+                  </li>
+              <% end %>
+            </ul>
+        </div>
+      </nav>
+
+      <% if flash[:notice] %>
+        <div class="alert alert-success">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="alert alert-danger">
+          <%= flash[:alert] %>
+        </div>
+<!-- flashは
+flash: {
+  alert: "登録に失敗しました"
+}
+ように、hashという形式で定義されており<%= flash[:alert] %>のようにすることで、それぞれにアクセスすることができます。 -->
+      <% end %>
+
     <%= yield %>
   </body>
 </html>
