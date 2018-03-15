@@ -53,7 +53,7 @@ group :development, :test do
   gem 'nested_form_fields'
   #languageにlevelをネストするため
 
-  gem 'jquery-rails', '~> 3.1.0'
+  gem 'jquery-rails'
   # Use jquery-UI as the JavaScript library
   gem 'jquery-ui-rails', '~> 4.2.1'
 end
