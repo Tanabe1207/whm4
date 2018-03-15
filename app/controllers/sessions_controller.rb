@@ -15,7 +15,6 @@ class SessionsController < ApplicationController
       #一致していればtrue。左辺と右辺両方がtrueならtrueを返す。
       log_in user
       #()を省略してる
-      debugger
       redirect_to root_path, alert:'ログインに成功しました'
     else
       flash[:denger] = 'ログインに失敗しました'
