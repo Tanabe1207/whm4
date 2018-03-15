@@ -11,7 +11,7 @@
           <div class="form-group">
             <%= f.label :mail, class: 'text-white' %>
             <!-- <label class="text-white" for="mail">メールアドレス</label> -->
-            <%= f.text_field :mail, class: 'form-control' %>
+            <%= f.email_field :mail, class: 'form-control' %>
           </div>
           <div class="form-group">
             <%= f.label :password, class: 'text-white' %>
@@ -22,15 +22,15 @@
             <%= f.text_field :password_confirmation, class: 'form-control' %>
           </div>
           <div class="form-group">
-            <#%= f.label :image%>
-            <#%= f.file_field :image %>
+            <%#= f.label :image%>
+            <%#= f.file_field :image %>
           </div>
           <div class="form-group">
           <label>
-            <#%= f.radio_button :gender, "男性"%>"男性"
+            <%#= f.radio_button :gender, "男性"%>"男性"
           </label>
           <label>
-            <#%= f.radio_button :gender, "女性"%>"女性"
+            <%#= f.radio_button :gender, "女性"%>"女性"
           </label>
           </div>
           <!-- <div class="radio-inline">
@@ -42,29 +42,31 @@
             <%#= f.radio_button :gender, :"女性" %>
           </div> -->
           <div class="form-group">
-            <#%= f.label :age, class: 'text-white' %>
-            <#%= f.text_field :age, class: 'form-control' %>
+            <%#= f.label :age, class: 'text-white' %>
+            <%#= f.text_field :age, class: 'form-control' %>
           </div>
           <div class="form-group">
-             <#%= f.select :nationality,
+             <%#= f.select :nationality,
              { nationality: "Japan","Korea","China"},{ class: 'text-white'} %>
             <%#= f.select :nationality,
             [["Japan"]["Korea"]["China"]["Chinese Taipei"]["Hong Kong"]["Australia"]["Canada"]["New Zealand"]["Ireland"]["German"]["UK"]["France"]]
              class: 'form-control' %>
           </div>
           <div class="form-group">
-            <#%= f.label :hobby, class: 'text-white' %>
-            <#%= f.text_field :hobby, class: 'form-control' %>
+            <%#= f.label :hobby, class: 'text-white' %>
+            <%#= f.text_field :hobby, class: 'form-control' %>
           </div>
           <div class="form-group">
-            <#%= f.select :languages,
-            [["English"]["Japanese"]["Korean"]["北京語"]["広東語"]["French"]]
-             class: 'form-control' %>
+            <%= f.select :languages, options_for_select([["English"],["Japanese"],["Korean"],["北京語"],["広東語"],["French"],["Germany"],["Itary"]], selected: @user.languages) %>
+
+            <!-- [["English"]["Japanese"]["Korean"]["北京語"]["広東語"]["French"]["Germany"]["Itary"]] -->
+             <!-- class: 'form-control' %> -->
+
           </div>
           <!-- language_usersをlanguegesに紐づけて並列表示 -->
           <div class="form-group">
-            <#%= f.text_field :introduce, class: 'form-control' %>
-            <#%= f.label :introduce, class: 'text-white' %>
+            <%#= f.text_field :introduce, class: 'form-control' %>
+            <%#= f.label :introduce, class: 'text-white' %>
           </div>
 
           <%= f.submit "登録", class: 'btn-block btn-white' %>
