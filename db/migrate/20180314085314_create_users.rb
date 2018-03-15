@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       # t.string :gender
       # t.string :age
       # t.string :nationality
-      # t.string :languages
+
       # t.string :offers
       # t.string :favorites
 
