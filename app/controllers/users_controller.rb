@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path, notice:'登録が完了しました'#saveできたらroot pathに飛ぶの意
     else
-      flash.now[:alert]="登r録に失敗しました"#noticeとalertは自動的にRailsに格納されているflashという変数の中に入ります。
+      flash.now[:alert]="登録に失敗しました"#noticeとalertは自動的にRailsに格納されているflashという変数の中に入ります。
       #<%= flash[:alert] %>でviewの中でアクセスできる。
       render :new #renderは呼び出すviewを指定する。
     end
