@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def new
     @user=User.new
+    2.times {@user.languages.build}
+    #デフォルトで2つの入力欄を表示
     #Userクラスからnewメソッドでインスタンスを生成してる。
     #Userクラスはモデルuser.rbの中にあり、別のクラスのApplicationRecordの継承を受けている。
     #newメソッドはクラスメソッドの一つであり、ApplicationRecord内に定義されている。
@@ -18,7 +20,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path, notice:'登録が完了しました'#saveできたらroot pathに飛ぶの意
     else
-      flash.now[:alert]="登録に失敗しました"#noticeとalertは自動的にRailsに格納されているflashという変数の中に入ります。
+      flash.now[:alert]="登r録に失敗しました"#noticeとalertは自動的にRailsに格納されているflashという変数の中に入ります。
       #<%= flash[:alert] %>でviewの中でアクセスできる。
       render :new #renderは呼び出すviewを指定する。
     end
@@ -29,7 +31,7 @@ class UsersController < ApplicationController
   #この作業がuser_paramsメソッド。
     def user_params
       params.require(:user).permit(:nickname, :mail, :password, :password_confirmation,
-      languages_attributes:[:id, :language, :level, :_destroy]
+      languages_attributes: [:id, :language, :level, :_destroy]
     )
     end
 

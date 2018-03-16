@@ -55,7 +55,7 @@ group :development, :test do
 
   gem 'jquery-rails'
   # Use jquery-UI as the JavaScript library
-  gem 'jquery-ui-rails', '~> 4.2.1'
+  gem 'jquery-ui-rails'
 end
 
 group :development do

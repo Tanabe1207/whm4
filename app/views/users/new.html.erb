@@ -57,20 +57,13 @@
             <%#= f.text_field :hobby, class: 'form-control' %>
           </div>
           <div class="form-group">
-            <table class="table table-striped table-bordered table-hover">
-              <tbody>
-                <tr>
-                  <th>使える言語</th>
-                  <th>レベル</th>
-                  <th></th>
-                </tr>
-                  <%= f.nested_fields_for :languages, wrapper_tag: :tr do |q| %>
-                    <td><%= q.select :language, options_for_select([["English"],["Japanese"],["Korean"],["北京語"],["広東語"],["French"],["Germany"],["Itary"]], selected:"選択してください") %></td>
-                    <td><%= q.select :level, options_for_select([["全く話せない"],["片言でなら"],["日常会話OK"],["ビジネスで使ってる"],["ネイティヴ"]], selected:"選択してください") %></td>
-                    <td><%= q.remove_nested_fields_link 'Delete', class: 'btn btn-danger', role: 'button' %></td>
-                  <% end %>
-                </tbody>
-              </table>
+            <%= f.label :languages, "話せる言語" %><br/>
+            <%= f.fields_for :languages do |languages_form| %>
+                  <%= languages_form.select :language, options_for_select([["English"],["Japanese"],["Korean"],["北京語"],["広東語"],["French"],["Germany"],["Itary"]]) %>
+                  <%= languages_form.select :level, options_for_select([["全く話せない"],["片言でなら"],["日常会話OK"],["ビジネスで使ってる"],["ネイティヴ"]]) %>
+                  <%= languages_form.remove_nested_fields_link 'Delete', class: 'btn btn-danger', role: 'button' %>
+            <% end %>
+
             <%= f.add_nested_fields_link :roomtypes, 'Add new', class: 'btn btn-primary', role:'button' %>
 
 
