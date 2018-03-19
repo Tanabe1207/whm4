@@ -10,32 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180318074349) do
-
-  create_table "languages", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "language"
-    t.integer "level"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "user_language_levels", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "language_id"
-    t.integer "level", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["language_id"], name: "index_user_language_levels_on_language_id"
-    t.index ["user_id"], name: "index_user_language_levels_on_user_id"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "nickname"
-    t.string "mail"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "password_digest"
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end

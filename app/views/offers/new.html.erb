@@ -1,2 +1,52 @@
-<h1>Offers#new</h1>
-<p>Find me in app/views/offers/new.html.erb</p>
+<div class="offer-new-wrapper">
+  <div class="row">
+    <h1 class="text-center">Let's make working holiday mate!</h1>
+      <%= form_for @offer do |f| %>
+        <div class="form-group">
+          <%= f.label :country %>
+          <%= f.text_area :country %>
+        </div>
+        <div class="form-group">
+          <%= f.label : %>
+          <%= f.text_area : %>
+        </div>
+        <div class="form-group">
+          <%= f.label : %>
+          <%= f.text_area : %>
+        </div>
+        <div class="form-group">
+          <%= f.label : %>
+          <%= f.text_area : %>
+        </div>
+        <div class="form-group">
+          <%= f.label : %>
+          <%= f.text_area : %>
+        </div>
+        <div class="form-group">
+          <%= f.label : %>
+          <%= f.text_area : %>
+        </div>
+        <div class="form-group">
+          <%= f.label : %>
+          <%= f.text_area : %>
+        </div>
+        <div class="form-group">
+          <%= f.label : %>
+          <%= f.text_area : %>
+        </div>
+        <div class="form-group">
+          <%= f.label :"旅のイメージ画像をアップロード" %>
+          <%= f.file_field :offer_image %>
+        </div>
+
+
+
+          t.integer: user_id
+          t.string: country
+          t.string: state
+          t.string: region
+          t.integer: period_form
+          t.integer: period_to
+          t.string: title
+          t.string: detail
+          t.string: offer_image

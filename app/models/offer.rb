@@ -2,8 +2,8 @@ class Offer < ApplicationRecord
 
   validates :user_id, presence: true
   validates :country, presence: true
-  validates :state, presence: true
-  validates :region, presence: true
+  # validates :state, presence: true
+  # validates :region, presence: true
   validates :period_form, presence: true
   validates :period_to, presence: true
   validates :title, presence: true
