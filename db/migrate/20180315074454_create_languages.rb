@@ -6,7 +6,6 @@ class CreateLanguages < ActiveRecord::Migration[5.1]
       t.string :language
       t.integer :level
 
-
       t.timestamps
     end
   end
