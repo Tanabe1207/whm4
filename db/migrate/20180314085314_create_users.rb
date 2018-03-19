@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
 
       # t.string :my_image
       # t.string :gender
-      # t.string :age
+      # t.integer :age
       # t.string :nationality
 
       # t.string :offers
