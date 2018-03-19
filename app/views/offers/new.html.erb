@@ -3,16 +3,16 @@
     <h1 class="text-center">Let's make working holiday mate!</h1>
       <%= form_for @offer do |f| %>
         <div class="form-group">
-          <%= f.label :country %>
+          <%= f.label :"行きたい国" %>
           <%= f.text_area :country %>
         </div>
         <div class="form-group">
-          <%= f.label : %>
-          <%= f.text_area : %>
+          <%= f.label :"州" %>
+          <%= f.text_area :state %>
         </div>
         <div class="form-group">
-          <%= f.label : %>
-          <%= f.text_area : %>
+          <%= f.label :"市・町" %>
+          <%= f.text_area :region %>
         </div>
         <div class="form-group">
           <%= f.label : %>
