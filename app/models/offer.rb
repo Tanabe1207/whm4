@@ -4,7 +4,7 @@ class Offer < ApplicationRecord
   validates :country, presence: true
   # validates :state, presence: true
   # validates :region, presence: true
-  validates :period_form, presence: true
+  validates :period_from, presence: true
   validates :period_to, presence: true
   validates :title, presence: true
   validates :detail, presence: true
@@ -12,7 +12,7 @@ class Offer < ApplicationRecord
 
   belongs_to :user
 
-  mount_uploader :image, ImageUploader
+  mount_uploader :offer_image, ImageUploader
 
 end
 
@@ -20,7 +20,7 @@ end
 # t.string: country
 # t.string: state
 # t.string: region
-# t.integer: period_form
+# t.integer: period_from
 # t.integer: period_to
 # t.string: title
 # t.string: detail

@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'offers/new'
-
   root 'tops#index'
 
   get 'login', to:'sessions#new'
@@ -9,7 +7,7 @@ Rails.application.routes.draw do
   delete 'logout', to:'sessions#destroy'
 
   resources 'users'
-  resources 'topics'
+  resources 'offers'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

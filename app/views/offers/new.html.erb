@@ -1,10 +1,12 @@
-<div class="offer-new-wrapper">
+<div class="offers-new-wrapper">
+ <div class="container">
   <div class="row">
-    <h1 class="text-center">Let's make working holiday mate!</h1>
+    <div class="col-md-offset-4 col-md-4 users-new-container">
+     <h1 class="text-center">Let's make working holiday mate!</h1>
       <%= form_for @offer do |f| %>
         <div class="form-group">
           <%= f.label :"行きたい国" %>
-          <%= f.text_area :country %>
+          <%= f.select :country[["Australia"],[]] %>
         </div>
         <div class="form-group">
           <%= f.label :"州" %>
@@ -29,34 +31,34 @@
           </span>
         </div>
         <div class="form-group">
-          <%= f.label : %>
-          <%= f.text_area : %>
+          <%= f.label :"旅のタイトル（３０文字以内）"%>
+          <%= f.text_area :title %>
         </div>
         <div class="form-group">
-          <%= f.label : %>
-          <%= f.text_area : %>
-        </div>
-        <div class="form-group">
-          <%= f.label : %>
-          <%= f.text_area : %>
-        </div>
-        <div class="form-group">
-          <%= f.label : %>
-          <%= f.text_area : %>
+          <%= f.label :"詳細説明" %>
+          <%= f.text_area :detail %>
         </div>
         <div class="form-group">
           <%= f.label :"旅のイメージ画像をアップロード" %>
           <%= f.file_field :offer_image %>
         </div>
 
+      <%= f.submit'投稿', class: 'btn btn-black btn-block' %>
+
+     <% end %>
+   </div>
+  </div>
+ </div>
+</div>
 
 
-          t.integer: user_id
+
+          <!-- t.integer: user_id
           t.string: country
           t.string: state
           t.string: region
-          t.integer: period_form
+          t.integer: period_from
           t.integer: period_to
           t.string: title
           t.string: detail
-          t.string: offer_image
+          t.string: offer_image -->

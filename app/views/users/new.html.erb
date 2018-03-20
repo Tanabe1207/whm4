@@ -59,7 +59,7 @@
           <div class="form-group">
             <%= f.label :languages, "話したい言語" %><br/>
             <%= f.fields_for :languages do |builder| %>
-              <%= render "language_fields", f:builder %>
+              <%= render "language_fields", f: builder %>
             <% end %>
             <%= link_to_add_fields "追加", f, :languages %>
           </div>

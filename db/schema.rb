@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20180319085336) do
     t.string "country"
     t.string "state"
     t.string "region"
-    t.integer "period_form"
+    t.integer "period_from"
     t.integer "period_to"
     t.string "title"
     t.string "detail"

@@ -14,12 +14,14 @@
 //= require turbolinks
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 
 //= require nested_form_fields
 // languageにlevelをネストするためhttps://www.virment.com/add_and_remove_rails_nested_form_dynamically/
 
 //= require bootstrap
-+ //= require moment
-+ //= require bootstrap-datetimepicker
+//= require moment
+//= require moment/ja.js
+//= require bootstrap-datetimepicker
+// daytimepiickerのため
+
 //= require_tree .

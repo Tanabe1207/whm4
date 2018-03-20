@@ -14,10 +14,9 @@ class OffersController < ApplicationController
 
   private
   def topic_params
-    params.require(:offer).permit
-    (:offer_image, :country, :state, :region, :period_form, :period_to, :title, :detail)
+    params.require(:offer).permit(:country, :state, :region, :period_from, :period_to, :title, :detail, :offer_image)
   end
-  
+
 end
 
 
@@ -25,7 +24,7 @@ end
 # t.string: country
 # t.string: state
 # t.string: region
-# t.integer: period_form
+# t.integer: period_from
 # t.integer: period_to
 # t.string: title
 # t.string: detail
