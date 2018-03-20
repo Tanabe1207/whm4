@@ -6,8 +6,8 @@ class CreateOffers < ActiveRecord::Migration[5.1]
       t.string :country
       t.string :state
       t.string :region
-      t.integer :period_from
-      t.integer :period_to
+      t.date :period_from
+      t.date :period_to
       t.string :title
       t.string :detail
       t.string :offer_image
