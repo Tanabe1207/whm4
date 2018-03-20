@@ -14,9 +14,19 @@
           <%= f.label :"市・町" %>
           <%= f.text_area :region %>
         </div>
-        <div class="form-group">
-          <%= f.label : %>
-          <%= f.text_area : %>
+        <div class="input-group date datepicker">
+          <%= f.label :from %>
+          <%= f.text_field :period_from, class: 'form-control' %>
+          <span class="input-group-addon">
+            <span class="fa fa calender"></span>
+          </span>
+        </div>
+        <div class="input-group date datepicker">
+          <%= f.label :to %>
+          <%= f.text_field :period_to, class: 'form-control' %>
+          <span class="input-group-addon">
+            <span class="fa fa calender"></span>
+          </span>
         </div>
         <div class="form-group">
           <%= f.label : %>

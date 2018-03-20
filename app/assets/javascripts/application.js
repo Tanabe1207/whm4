@@ -18,3 +18,8 @@
 
 //= require nested_form_fields
 // languageにlevelをネストするためhttps://www.virment.com/add_and_remove_rails_nested_form_dynamically/
+
+//= require bootstrap
++ //= require moment
++ //= require bootstrap-datetimepicker
+//= require_tree .
