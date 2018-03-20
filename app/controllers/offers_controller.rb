@@ -4,8 +4,9 @@ class OffersController < ApplicationController
   end
 
   def create
-    if current_user.offers.create(offer_params)
-      redirect_to offers_path, notice:'投稿に成功しました'
+   @offer = current_user.offers.new(offer_params)
+    if @offer.save
+      redirect_to root_path, notice:'投稿に成功しました'
     else
       flash.now[:alert]="投稿失敗"
       render :new
@@ -13,7 +14,7 @@ class OffersController < ApplicationController
   end
 
   private
-  def topic_params
+  def offer_params
     params.require(:offer).permit(:country, :state, :region, :period_from, :period_to, :title, :detail, :offer_image)
   end
 
