@@ -27,12 +27,14 @@
           </div>
           <div class="form-group">
             <div class="radio-inline">
-              <%= f.radio_button :gender, :男性, checked: "checked" %>
-              <%= f.label :男性, class: "gender" %>
+              <label>
+                <%= f.radio_button :gender, "男性" %>男性
+              </label>
             </div>
             <div class="radio-inline">
-              <%= f.radio_button :gender, :女性 %>
-              <%= f.label :女性, class: "gender" %>
+              <label>
+                <%= f.radio_button :gender, "女性" %>女性
+              </label>
             </div>
           </div>
           <!-- <div class="radio-inline">
@@ -55,8 +57,9 @@
             <%#= f.text_field :age, class: 'form-control' %>
           </div>
           <div class="form-group">
-             <%#= f.select :nationality,
-             { nationality: "Japan","Korea","China"},{ class: 'text-white'} %>
+             <%= f.label :"国籍" %>
+             <%= f.select :nationality,
+            [["日本","Japan"],["韓国","Korea"],["中国","China"]] ,class: 'form-control' %>
             <%#= f.select :nationality,
             [["Japan"]["Korea"]["China"]["Chinese Taipei"]["Hong Kong"]["Australia"]["Canada"]["New Zealand"]["Ireland"]["German"]["UK"]["France"]]
              class: 'form-control' %>

@@ -4,9 +4,9 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :nickname
       t.string :mail
       t.string :my_image
-      t.integer :gender
+      t.string :gender
       t.date :birthday
-      t.integer :age
+      # t.integer :age
       t.string :nationality
 
       # t.string :favorites

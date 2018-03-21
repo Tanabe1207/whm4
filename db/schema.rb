@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 20180319085336) do
     t.string "country"
     t.string "state"
     t.string "region"
-    t.integer "period_from"
-    t.integer "period_to"
+    t.date "period_from"
+    t.date "period_to"
     t.string "title"
     t.string "detail"
     t.string "offer_image"
@@ -47,6 +47,11 @@ ActiveRecord::Schema.define(version: 20180319085336) do
   create_table "users", force: :cascade do |t|
     t.string "nickname"
     t.string "mail"
+    t.string "my_image"
+    t.string "gender"
+    t.date "birthday"
+    t.integer "age"
+    t.string "nationality"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"

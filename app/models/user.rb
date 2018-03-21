@@ -7,7 +7,6 @@ class User < ApplicationRecord
   #validates :birthday, presence: true
   validates :nationality, presence: true
   
-
   has_many :user_language_levels, foreign_key: 'user_id'
   has_many :languages, through: :user_language_levels,
   dependent: :destroy  #languageにlevelをnestするため
