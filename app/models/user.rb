@@ -6,7 +6,7 @@ class User < ApplicationRecord
   enum gender:{男性:1, 女性:2}
   #validates :birthday, presence: true
   validates :nationality, presence: true
-  
+
   has_many :user_language_levels, foreign_key: 'user_id'
   has_many :languages, through: :user_language_levels,
   dependent: :destroy  #languageにlevelをnestするため
@@ -25,3 +25,15 @@ end
 # t.string :nationality
 # t.string :offers
 # t.string :favorites
+
+# "Japan"
+# "Korea"
+# "Taiwan"
+# "Hong Kong"
+# "China"
+# "Australia"
+# "New Zealand"
+# "France"
+# "German"
+# "Nederland"
+# "Canada"
