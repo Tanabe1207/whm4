@@ -17,7 +17,7 @@
             </div>
             <div class="bottom-of-left">
               <div class="flag">
-                <% case offer.user.nationality %>
+                <% case offer.user.nationality %><!-- nationalityに応じた旗を表示 -->
                   <% when "Japan", image_tag 'icons/flag/jpn.png' %>
                   <% when "Korea", image_tag 'icons/flag/kre.png' %>
                   <% when "Taiwan", image_tag 'icons/flag/twn.png' %>
@@ -31,17 +31,24 @@
                   <% when "Canada", image_tag 'icons/flag/cnd.png' %>
                 <% end %>
               </div>
-              <div class="name"><!-- nameはflagの右にfloatする -->
-                <%= offer.my_name %>
-              </div>
-              
+              <div class="nickname"><!-- nameはflagの右にfloatする -->
+                <%= offer.user.nickname %>
               </div>
 
-            </div>
+            </div><!-- bottom-of-left -->
 
-            <!-- nationalityに応じた旗を表示 -->
-          </div>
-          <!-- media-left -->
+          </div><!-- media-left -->
+
+          <ul class="media-right">
+            <li>渡航先　<% offer.user.country %>:<% offer.user.state %>,<% offer.user.region %></li>
+            <li>渡航予定日<% offer.user.period_form %>　～　<% offer.user.period_to %></li>
+            <li class="talkable-languages">
+              話したい言語　<% user.language.each do |l| %>
+              <!-- 3/21ここまで -->
+            </li>
+            <li>趣味</li>
+          </ul>
+        </div><!-- media -->
           <div class="offer_name">
             <%= offer.user.nickname %>
           </div>
