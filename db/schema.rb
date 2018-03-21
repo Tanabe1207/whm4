@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180315074454) do
+ActiveRecord::Schema.define(version: 20180319085336) do
 
   create_table "languages", force: :cascade do |t|
     t.integer "user_id"
@@ -18,6 +18,30 @@ ActiveRecord::Schema.define(version: 20180315074454) do
     t.integer "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "offers", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "country"
+    t.string "state"
+    t.string "region"
+    t.integer "period_from"
+    t.integer "period_to"
+    t.string "title"
+    t.string "detail"
+    t.string "offer_image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_language_levels", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "language_id"
+    t.integer "level", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_user_language_levels_on_language_id"
+    t.index ["user_id"], name: "index_user_language_levels_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
