@@ -1,5 +1,5 @@
 class Offer < ApplicationRecord
-
+  mount_uploader :offer_image, ImageUploader
   validates :user_id, presence: true
   validates :country, presence: true
   # validates :state, presence: true

@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20180319085336) do
     t.string "gender"
     t.date "birthday"
     t.string "nationality"
+    t.string "hobby"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"

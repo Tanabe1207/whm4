@@ -6,30 +6,31 @@
     <div class="row">
       <div class="col-md-6 offer_container" >
         <h3 class="offer_title">
-          <%= offer.user.title %>
+          <%= offer.title %>
         </h3>
         <div class="media"> <!-- http://bootstrap3.cyberlab.info/components/mediaObject.html#usage1 -->
           <div class="media-left"> <!--  -->
             <div class="my_image">
               <#%= link_to my_page_path(a: user_id) do %>
-              <%= image_tag offer.my_image.url %>
+              <%= image_tag offer.user.my_image.url %>
+              <!--エラー。 .urlも最後につける？何の意味？ -->
               <#% end %>
             </div>
             <div class="bottom-of-left">
               <div class="flag">
-                <% case offer.user.nationality %><!-- nationalityに応じた旗を表示.。どうやってそれぞれのofferに対応させる？ -->
-                <% when  "Japan" then image_tag('icons/flag/jpn.png') %>
-                <#% when "Korea", image_tag 'icons/flag/kre.png' %>
-                <#% when "Taiwan", image_tag 'icons/flag/twn.png' %>
-                <#% when "Hong Kong", image_tag 'icons/flag/hkn.png' %>
-                <#% when "China", image_tag 'icons/flag/chn.png' %>
-                <#% when "Australia", image_tag 'icons/flag/aus.png' %>
-                <#% when "New Zealand", image_tag 'icons/flag/nzl.png' %>
-                <#% when "France", image_tag 'icons/flag/fra.png' %>
-                <#% when "German", image_tag 'icons/flag/gmn.png' %>
-                <#% when "Nederland", image_tag 'icons/flag/ndl.png' %>
-                <#% when "Canada", image_tag 'icons/flag/cnd.png' %>
-                <% end %>
+                <#% case offer.user.nationality %><!-- nationalityに応じた旗を表示.。どうやってそれぞれのofferに対応させる？ -->
+                <#% when Japan then image_tag 'icons/flags/jpn.png' %>
+                <#% when "Korea", image_tag 'icons/flags/kre.png' %>
+                <#% when "Taiwan", image_tag 'icons/flags/twn.png' %>
+                <#% when "Hong Kong", image_tag 'icons/flags/hkn.png' %>
+                <#% when "China", image_tag 'icons/flags/chn.png' %>
+                <#% when "Australia", image_tag 'icons/flags/aus.png' %>
+                <#% when "New Zealand", image_tag 'icons/flags/nzl.png' %>
+                <#% when "France", image_tag 'icons/flags/fra.png' %>
+                <#% when "German", image_tag 'icons/flags/gmn.png' %>
+                <#% when "Nederland", image_tag 'icons/flags/ndl.png' %>
+                <#% when "Canada", image_tag 'icons/flags/cnd.png' %>
+                <#% end %>
               </div>
               <div class="nickname"><!-- nameはflagの右にfloatする -->
                 <%= offer.user.nickname %>
@@ -40,8 +41,8 @@
           </div><!-- media-left -->
 
           <ul class="media-right">
-            <li>渡航先　<%= offer.user.country %>:<%= offer.user.state %>,<% offer.user.region %></li>
-            <li>渡航予定日<%= offer.user.period_form %>　～　<%= offer.user.period_to %></li>
+            <li>渡航先　<%= offer.country %>:<%= offer.state %>,<% offer.region %></li>
+            <li>渡航予定日<%= offer.period_from %>　～　<%= offer.period_to %></li>
             <div class="talkable-languages-container">
               <li class="talkable-languages">
                 話したい言語　
@@ -51,9 +52,10 @@
               </li>
               <li class="talkable-languages-level">
                 level
-                <% offer.user.user_language_level.level each do |level| %>
-                <%= level %>
-                <% end %>
+                <#% offer.user.user_language_level.level.each do |level| %>
+                <#%= level %>
+                <#% end %>
+                <!-- language モデル完成後再考 -->
               </li>
             </div>
             <li>趣味　<%= offer.user.hobby %></li>

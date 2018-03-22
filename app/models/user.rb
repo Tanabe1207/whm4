@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
+  mount_uploader :my_image, ImageUploader
+
   validates :nickname, presence: true
   validates :mail, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   validates :my_image, presence: true
@@ -11,7 +13,6 @@ class User < ApplicationRecord
   has_many :languages, through: :user_language_levels,
   dependent: :destroy  #languageにlevelをnestするため
   accepts_nested_attributes_for :user_language_levels, allow_destroy: true, reject_if: :all_blank
-
   has_many :offers
 
 end
