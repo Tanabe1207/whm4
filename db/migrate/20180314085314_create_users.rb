@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.date :birthday
       # t.integer :age
       t.string :nationality
+      t.string :hobby
 
       # t.string :favorites
 

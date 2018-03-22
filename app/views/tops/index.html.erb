@@ -1,7 +1,7 @@
 
 <div class="main">
   <div class="offer">
-    <#% @offers.each do |offer| %>
+    <% @offer.each do |offer| %>
     <!-- 募集案件 -->
     <div class="row">
       <div class="col-md-6 offer_container" >
@@ -12,23 +12,23 @@
           <div class="media-left"> <!--  -->
             <div class="my_image">
               <#%= link_to my_page_path(a: user_id) do %>
-                <%= image_tag offer.my_image.url %>
+              <%= image_tag offer.my_image.url %>
               <#% end %>
             </div>
             <div class="bottom-of-left">
               <div class="flag">
-                <% case offer.user.nationality %><!-- nationalityに応じた旗を表示 -->
-                  <% when "Japan", image_tag 'icons/flag/jpn.png' %>
-                  <% when "Korea", image_tag 'icons/flag/kre.png' %>
-                  <% when "Taiwan", image_tag 'icons/flag/twn.png' %>
-                  <% when "Hong Kong", image_tag 'icons/flag/hkn.png' %>
-                  <% when "China", image_tag 'icons/flag/chn.png' %>
-                  <% when "Australia", image_tag 'icons/flag/aus.png' %>
-                  <% when "New Zealand", image_tag 'icons/flag/nzl.png' %>
-                  <% when "France", image_tag 'icons/flag/fra.png' %>
-                  <% when "German", image_tag 'icons/flag/gmn.png' %>
-                  <% when "Nederland", image_tag 'icons/flag/ndl.png' %>
-                  <% when "Canada", image_tag 'icons/flag/cnd.png' %>
+                <% case offer.user.nationality %><!-- nationalityに応じた旗を表示.。どうやってそれぞれのofferに対応させる？ -->
+                <% when  "Japan" then image_tag('icons/flag/jpn.png') %>
+                <#% when "Korea", image_tag 'icons/flag/kre.png' %>
+                <#% when "Taiwan", image_tag 'icons/flag/twn.png' %>
+                <#% when "Hong Kong", image_tag 'icons/flag/hkn.png' %>
+                <#% when "China", image_tag 'icons/flag/chn.png' %>
+                <#% when "Australia", image_tag 'icons/flag/aus.png' %>
+                <#% when "New Zealand", image_tag 'icons/flag/nzl.png' %>
+                <#% when "France", image_tag 'icons/flag/fra.png' %>
+                <#% when "German", image_tag 'icons/flag/gmn.png' %>
+                <#% when "Nederland", image_tag 'icons/flag/ndl.png' %>
+                <#% when "Canada", image_tag 'icons/flag/cnd.png' %>
                 <% end %>
               </div>
               <div class="nickname"><!-- nameはflagの右にfloatする -->
@@ -40,25 +40,29 @@
           </div><!-- media-left -->
 
           <ul class="media-right">
-            <li>渡航先　<% offer.user.country %>:<% offer.user.state %>,<% offer.user.region %></li>
-            <li>渡航予定日<% offer.user.period_form %>　～　<% offer.user.period_to %></li>
-            <li class="talkable-languages">
-              話したい言語　<% user.language.each do |l| %>
-              <!-- 3/21ここまで -->
-            </li>
-            <li>趣味</li>
-          </ul>
-        </div><!-- media -->
-          <div class="offer_name">
-            <%= offer.user.nickname %>
-          </div>
-          <div class="media-body">
-          </div>
+            <li>渡航先　<%= offer.user.country %>:<%= offer.user.state %>,<% offer.user.region %></li>
+            <li>渡航予定日<%= offer.user.period_form %>　～　<%= offer.user.period_to %></li>
+            <div class="talkable-languages-container">
+              <li class="talkable-languages">
+                話したい言語　
+                <% offer.user.languages.each do |language| %> <!-- languages(複数形)でOK？ -->
+                <%= language %>
+                <% end %>
+              </li>
+              <li class="talkable-languages-level">
+                level
+                <% offer.user.user_language_level.level each do |level| %>
+                <%= level %>
+                <% end %>
+              </li>
+            </div>
+            <li>趣味　<%= offer.user.hobby %></li>
+          </ul><!-- media-right -->
 
         </div>
         <!-- media -->
       </div>
     </div>
-    <#% end %>
+    <% end %>
   </div>
 </div>
