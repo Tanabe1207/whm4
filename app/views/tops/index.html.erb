@@ -11,30 +11,41 @@
         <div class="media"> <!-- http://bootstrap3.cyberlab.info/components/mediaObject.html#usage1 -->
           <div class="media-left"> <!--  -->
             <div class="my_image">
-              <#%= link_to my_page_path(a: user_id) do %>
+              <%#= link_to my_page_path(a: user_id) do %>
               <%= image_tag offer.user.my_image.url %>
               <!--エラー。 .urlも最後につける？何の意味？ -->
-              <#% end %>
+              <%# end %>
             </div>
             <div class="bottom-of-left">
               <div class="flag">
-                <#% case offer.user.nationality %><!-- nationalityに応じた旗を表示.。どうやってそれぞれのofferに対応させる？ -->
-                <#% when Japan then image_tag 'icons/flags/jpn.png' %>
-                <#% when "Korea", image_tag 'icons/flags/kre.png' %>
-                <#% when "Taiwan", image_tag 'icons/flags/twn.png' %>
-                <#% when "Hong Kong", image_tag 'icons/flags/hkn.png' %>
-                <#% when "China", image_tag 'icons/flags/chn.png' %>
-                <#% when "Australia", image_tag 'icons/flags/aus.png' %>
-                <#% when "New Zealand", image_tag 'icons/flags/nzl.png' %>
-                <#% when "France", image_tag 'icons/flags/fra.png' %>
-                <#% when "German", image_tag 'icons/flags/gmn.png' %>
-                <#% when "Nederland", image_tag 'icons/flags/ndl.png' %>
-                <#% when "Canada", image_tag 'icons/flags/cnd.png' %>
-                <#% end %>
+                <% case offer.user.nationality %>
+                  <% when "Japan" then %>
+                  <%= image_tag 'icons/flags/jpy.png' %>
+                  <% when "Korea" then %>
+                  <%=image_tag 'icons/flags/kre.png' %>
+                  <% when "Taiwan" then %>
+                  <%=image_tag 'icons/flags/twn.png' %>
+                  <% when "Hong Kong" then %>
+                  <%=image_tag 'icons/flags/hkn.png' %>
+                  <% when "China" then %>
+                  <%=image_tag 'icons/flags/chn.png' %>
+                  <% when "Australia" then %>
+                  <%=image_tag 'icons/flags/aus.png' %>
+                  <% when "New Zealand" then %>
+                  <%=image_tag 'icons/flags/nzl.png' %>
+                  <% when "France" then %>
+                  <%=image_tag 'icons/flags/fra.png' %>
+                  <% when "German" then %>
+                  <%=image_tag 'icons/flags/gmn.png' %>
+                  <% when "Nederland" then %>
+                  <%=image_tag 'icons/flags/ndl.png' %>
+                  <% when "Canada" then %>
+                  <%=image_tag 'icons/flags/cnd.png' %>
+                <% end %>
               </div>
-              <div class="nickname"><!-- nameはflagの右にfloatする -->
+              <h4 class="nickname"><!-- nameはflagの右にfloatする -->
                 <%= offer.user.nickname %>
-              </div>
+              </h4>
 
             </div><!-- bottom-of-left -->
 
@@ -43,24 +54,22 @@
           <ul class="media-right">
             <li>渡航先　<%= offer.country %>:<%= offer.state %>,<% offer.region %></li>
             <li>渡航予定日<%= offer.period_from %>　～　<%= offer.period_to %></li>
-            <div class="talkable-languages-container">
-              <li class="talkable-languages">
-                話したい言語　
-                <% offer.user.languages.each do |language| %> <!-- languages(複数形)でOK？ -->
+          <div class="talkable-languages-container">
+            <li class="talkable-languages">
+              話したい言語　
+              <% offer.user.languages.each do |language| %>
                 <%= language %>
-                <% end %>
-              </li>
-              <li class="talkable-languages-level">
-                level
-                <#% offer.user.user_language_level.level.each do |level| %>
-                <#%= level %>
-                <#% end %>
-                <!-- language モデル完成後再考 -->
-              </li>
-            </div>
-            <li>趣味　<%= offer.user.hobby %></li>
-          </ul><!-- media-right -->
-
+              <% end %>
+            </li>
+            <li class="talkable-languages-level">
+              level
+              <%# offer.user.user_language_level.level.each do |level| %>
+              <%#= level %>
+              <%# end %>
+            </li>
+          </div>
+              <li>趣味　<%= offer.user.hobby %></li>
+          </ul>
         </div>
         <!-- media -->
       </div>
