@@ -6,14 +6,15 @@
     <div class="row">
       <div class="col-md-6 offer_container" >
         <h3 class="offer_title">
-          <%= offer.title %>
+          <%#= link_to(offer_detail_path(a: offer_id)) do %>
+            <%= offer.title %>
+          <%# end %>
         </h3>
         <div class="media"> <!-- http://bootstrap3.cyberlab.info/components/mediaObject.html#usage1 -->
-          <div class="media-left"> <!--  -->
+          <div class="media-left">
             <div class="my_image">
               <%#= link_to my_page_path(a: user_id) do %>
               <%= image_tag offer.user.my_image.url %>
-              <!--エラー。 .urlも最後につける？何の意味？ -->
               <%# end %>
             </div>
             <div class="bottom-of-left">

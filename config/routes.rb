@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'offer_details/index'
+
   root 'tops#index'
 
   get 'login', to:'sessions#new'
