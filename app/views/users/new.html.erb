@@ -76,10 +76,7 @@
              # "Nederland"
              # "Canada" -->
           </div>
-          <div class="form-group">
-            <%#= f.label :hobby, class: 'text-white' %>
-            <%#= f.text_field :hobby, class: 'form-control' %>
-          </div>
+
           <div class="form-group">
             <%= f.label :languages, "話したい言語" %><br/>
             <%= f.fields_for :languages do |builder| %>
@@ -88,21 +85,19 @@
             <%= link_to_add_fields "追加", f, :languages %>
           </div>
 
-            <!-- [["English"]["Japanese"]["Korean"]["北京語"]["広東語"]["French"]["Germany"]["Itary"]] -->
-             <!-- class: 'form-control' %> -->
-
-          </div>
           <!-- language_usersをlanguegesに紐づけて並列表示 -->
           <div class="form-group">
-            <%#= f.text_field :introduce, class: 'form-control' %>
-            <%#= f.label :introduce, class: 'text-white' %>
+            <%= f.label :hobby, class: 'text-white' %>
+            <%= f.text_field :hobby, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :"自己紹介", class: 'form-control' %>
+            <%= f.label :introduce_yourself, class: 'text-white' %>
           </div>
 
           <%= f.submit "登録", class: 'btn-block btn-white' %>
         <% end %>
-
-
-
       </div>
     </div>
   </div>

@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   #この作業がuser_paramsメソッド。
     def user_params
       params.require(:user).permit(:nickname, :mail, :password, :password_confirmation, :my_image,
-        :gender, :birthday, :nationality,
+        :gender, :birthday, :nationality, :introduce_yourself,
          languages_attributes: [:id, :language, :level, :_destroy])
     end
     #  languages_attributesの前にコロンいらない？

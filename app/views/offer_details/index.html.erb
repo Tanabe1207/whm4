@@ -1,27 +1,105 @@
+<div class="container">
+  <div class="row">
 
-<div class="offer-main">
-  <div class="offer-top">
-    <div class="offer-title">
-    </div>
-    <div class="offer-detail">
-    </div>
-  </div>
-
-  <div class="offer-middle">
-    <div class="favorite">
-    </div>
-    <div class="contact">
-    </div>
-  </div>
-
-  <div class="offer-bottom">
-    <div class="offer-bottom-left">
-      <div class="offer-bottom-left-top">
+    <div class="col-md-10 offer-main">
+      <div class="offer-top">
+        <div class="offer-image">
+          <%= image_tag offer.user.offer_image.url %>
+        </div>
+        <div class="offer-place">
+          <p>渡航先　</p>　
+          <%= offer.country %>:<%= offer.state %>,<% offer.region %></li>
+        </div>
+        <!-- 左寄せ -->
+        <div class="period">
+          <p>渡航予定日　</p>
+          <%= offer.period_from %>　～　<%= offer.period_to %>
+        </div>
+        <!-- 右寄せ -->
+        <div class="offer-title">
+          <%= offer.title %>
+        </div>
+        <div class="offer-detail">
+          <%= offer.detail %>
+        </div>
       </div>
-      <div class="offer-bottom-left-bottom">
+
+      <div class="offer-middle">
+        <div class="favorite-icon">
+          <%=image_tag 'icons/favorite.png' %>
+        </div>
+        <div class="contact-icon">
+          <%=image_tag 'icons/contact.png' %>
+        </div>
+      </div>
+
+      <div class="offer-bottom">
+        <div class="col-md-4 offer-bottom-left">
+          <div class="offer-bottom-left-top">
+            <%= image_tag offer.user.my_image.url %>
+          </div>
+          <div class="offer-bottom-left-bottom">
+            <div class="flag">
+              <% case offer.user.nationality %>
+                <% when "Japan" then %>
+                <%= image_tag 'icons/flags/jpy.png' %>
+                <% when "Korea" then %>
+                <%=image_tag 'icons/flags/kre.png' %>
+                <% when "Taiwan" then %>
+                <%=image_tag 'icons/flags/twn.png' %>
+                <% when "Hong Kong" then %>
+                <%=image_tag 'icons/flags/hkn.png' %>
+                <% when "China" then %>
+                <%=image_tag 'icons/flags/chn.png' %>
+                <% when "Australia" then %>
+                <%=image_tag 'icons/flags/aus.png' %>
+                <% when "New Zealand" then %>
+                <%=image_tag 'icons/flags/nzl.png' %>
+                <% when "France" then %>
+                <%=image_tag 'icons/flags/fra.png' %>
+                <% when "German" then %>
+                <%=image_tag 'icons/flags/gmn.png' %>
+                <% when "Nederland" then %>
+                <%=image_tag 'icons/flags/ndl.png' %>
+                <% when "Canada" then %>
+                <%=image_tag 'icons/flags/cnd.png' %>
+              <% end %>
+            </div>
+            <h4 class="nickname"><!-- nameはflagの右にfloatする -->
+              <%= offer.user.nickname %>
+            </h4>
+          </div>
+        </div>
+        <ul class="col-md-6 offer-bottom-right">
+            <li class="nationality-container"></li>
+              <p>出身国　</p>　<%= offer.user.nationality class:'nationality'%>
+          <div class="languages-container">
+            <li class="talkable-languages-container">
+              <p>話したい言語　</p>　
+              <% offer.user.languages.each do |language| %>
+                <%= language %>
+              <% end %>
+            </li>
+            <li class="talkable-languages-level-container">
+              <p>level　</p>
+              <%# offer.user.user_language_level.level.each do |level| %>
+              <%#= level %>
+              <%# end %>
+            </li>
+          </div>
+            <li class="hobby-container">
+              <p>趣味　</p>　<%= offer.user.hobby class:'hobby'%>
+            </li>
+            <li class="introduce-container">
+              <p>自己紹介　</p>
+              <%= offer.user.introduce_yourself class:'introduce_yourself' %>
+            </li>
+
+          </ul>
+            <!-- nationarity,age,hobby,introduce -->
+        </div>
       </div>
     </div>
-    <div class="offer-bottom-right">
-        <!-- nationarity,age,hobby,introduce -->
-    </div>
+
   </div>
+</div>
