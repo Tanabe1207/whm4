@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'rooms/show'
+
   get 'offer_details/index'
 
   root 'tops#index'
