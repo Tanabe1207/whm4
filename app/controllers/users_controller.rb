@@ -26,6 +26,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    #ログインユーザーのレコードの取得
+    @user_my_page = current_user
+
+  end
+
+
   private
   #viewから送られてきたデータは、paramsに格納されている。paramsを適切な各テーブルに挿入。
   #この作業がuser_paramsメソッド。
