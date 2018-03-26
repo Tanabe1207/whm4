@@ -30,7 +30,10 @@ class UsersController < ApplicationController
     #ログインユーザーのレコードの取得
     @user_my_page = User.find(params[:id])
     #なお、findはidのみを引数に取るメソッド
+  end
 
+  def edit
+    @user = User.find(params[:id])
   end
 
 
