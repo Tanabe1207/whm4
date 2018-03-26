@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'users/:id' => 'users#show' #マイページ
+  
   # "=>"は実行結果
 
   get 'offer_details/index'

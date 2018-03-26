@@ -20,37 +20,38 @@
               <%# end %>
             </div>
             <div class="bottom-of-left">
-              <div class="flag">
-                <% case offer.user.nationality %>
-                  <% when "Japan" then %>
-                  <%= image_tag 'icons/flags/jpy.png' %>
-                  <% when "Korea" then %>
-                  <%=image_tag 'icons/flags/kre.png' %>
-                  <% when "Taiwan" then %>
-                  <%=image_tag 'icons/flags/twn.png' %>
-                  <% when "Hong Kong" then %>
-                  <%=image_tag 'icons/flags/hkn.png' %>
-                  <% when "China" then %>
-                  <%=image_tag 'icons/flags/chn.png' %>
-                  <% when "Australia" then %>
-                  <%=image_tag 'icons/flags/aus.png' %>
-                  <% when "New Zealand" then %>
-                  <%=image_tag 'icons/flags/nzl.png' %>
-                  <% when "France" then %>
-                  <%=image_tag 'icons/flags/fra.png' %>
-                  <% when "German" then %>
-                  <%=image_tag 'icons/flags/gmn.png' %>
-                  <% when "Nederland" then %>
-                  <%=image_tag 'icons/flags/ndl.png' %>
-                  <% when "Canada" then %>
-                  <%=image_tag 'icons/flags/cnd.png' %>
-                <% end %>
-              </div>
-              <h4 class="nickname"><!-- nameはflagの右にfloatする -->
-                <%= offer.user.nickname %>
-              </h4>
+               
+                <div class="flag">
+                  <% case offer.user.nationality %>
+                    <% when "Japan" then %>
+                    <%= image_tag 'icons/flags/jpy.png' %>
+                    <% when "Korea" then %>
+                    <%=image_tag 'icons/flags/kre.png' %>
+                    <% when "Taiwan" then %>
+                    <%=image_tag 'icons/flags/twn.png' %>
+                    <% when "Hong Kong" then %>
+                    <%=image_tag 'icons/flags/hkn.png' %>
+                    <% when "China" then %>
+                    <%=image_tag 'icons/flags/chn.png' %>
+                    <% when "Australia" then %>
+                    <%=image_tag 'icons/flags/aus.png' %>
+                    <% when "New Zealand" then %>
+                    <%=image_tag 'icons/flags/nzl.png' %>
+                    <% when "France" then %>
+                    <%=image_tag 'icons/flags/fra.png' %>
+                    <% when "German" then %>
+                    <%=image_tag 'icons/flags/gmn.png' %>
+                    <% when "Nederland" then %>
+                    <%=image_tag 'icons/flags/ndl.png' %>
+                    <% when "Canada" then %>
+                    <%=image_tag 'icons/flags/cnd.png' %>
+                  <% end %>
+                </div>
+                <h4 class="nickname"><!-- nameはflagの右にfloatする -->
+                  <%= offer.user.nickname %>
+                </h4>
 
-            </div><!-- bottom-of-left -->
+              </div><!-- bottom-of-left -->
 
           </div><!-- media-left -->
 

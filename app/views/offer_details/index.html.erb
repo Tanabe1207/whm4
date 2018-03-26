@@ -34,6 +34,7 @@
       </div>
 
       <div class="offer-bottom">
+        <%= link_to(offer_details_index_path(user_id: offer.user.id)) do %>
         <div class="col-md-4 offer-bottom-left">
           <div class="offer-bottom-left-top">
             <%= image_tag @offer_details.user.my_image.url %>
@@ -100,6 +101,7 @@
 
           </ul>
             <!-- nationarity,age,hobby,introduce -->
+        <% end %>
         </div>
       </div>
     </div>
