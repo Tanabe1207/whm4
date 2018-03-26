@@ -24,6 +24,7 @@
                   </li>
                   <li>
                     <%= link_to current_user do %>
+                    <!-- link_to にモデルオブジェクトを渡すと、users/"id"のリンクをつくる。そのモデルに対応するコントローラーのshowアクションに飛ぶ。 -->
                       <%= image_tag 'icons/my_page.png' %><!--マイページ-->
                     <% end %>
                   </li>

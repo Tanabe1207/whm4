@@ -28,7 +28,8 @@ class UsersController < ApplicationController
 
   def show
     #ログインユーザーのレコードの取得
-    @user_my_page = User.find_by(id: params[:id])
+    @user_my_page = User.find(params[:id])
+    #なお、findはidのみを引数に取るメソッド
 
   end
 
