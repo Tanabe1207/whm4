@@ -36,6 +36,17 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      redirect_to controller: 'users', action: 'show', id:current_user, notice:'ユーザー情報を更新しました'
+    else
+      flash.now[:alert]="登録に失敗しました"
+      render :edit
+    end
+  end
+
+
 
   private
   #viewから送られてきたデータは、paramsに格納されている。paramsを適切な各テーブルに挿入。
