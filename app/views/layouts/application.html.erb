@@ -38,6 +38,11 @@
                       <%= image_tag 'icons/logout.png' %><!--ログアウト-->
                     <% end %>
                   </li>
+                  <li>
+                    <%= link_to 'https://appear.in/' do %>
+                      <%= image_tag 'icons/appear.in.png' %>
+                    <% end %>
+                  </li>
               <% else %>
                   <li>
                     <%= link_to new_user_path do %>
@@ -53,6 +58,8 @@
             </ul>
         </div>
       </nav>
+
+
 
       <% if flash[:notice] %>
         <div class="alert alert-success">
@@ -71,5 +78,26 @@ flash: {
       <% end %>
 
     <%= yield %>
+    <footer class="footer">
+      <div class="container">
+        <ul class=footer_menu>
+          <li>
+            <%= link_to 'お問い合わせ',"#" %>
+          </li>
+          <li>
+            <%= link_to 'プライバシーポリシー',"#" %>
+          </li>
+          <li>
+            <%= link_to '広告掲載',"#" %>
+          </li>
+          <li>
+            <%= link_to '退会',"#" %>
+          </li>
+          <li>
+            <%= link_to '運営',"#" %>
+          </li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>

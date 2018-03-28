@@ -29,7 +29,9 @@
           <%=image_tag 'icons/favorite.png' %>
         </div>
         <div class="contact-icon">
-          <%=image_tag 'icons/contact.png' %>
+          <%= link_to rooms_show_path do %>
+          <%= image_tag 'icons/contact.png' %>
+          <% end %>
         </div>
       </div>
 
