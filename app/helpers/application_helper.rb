@@ -11,7 +11,7 @@ module ApplicationHelper
   end
 
   def logged_in?
-    !current_user.nil?
+  !current_user.nil?
   end
 #ここから下 link_to_add_fieldsヘルパー
   def link_to_add_fields(name, f, association)

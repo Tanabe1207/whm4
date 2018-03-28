@@ -13,4 +13,9 @@ class ApplicationController < ActionController::Base
     #.nil?メソッドで上で定義したcurrent_userがnilならtrueを返すが、「！」で
     #真偽値をひっくり返すので、「空ならfalesを返す」ということ。
   end
+
+  def offer?
+    # !nil?
+  end
+
 end

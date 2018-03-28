@@ -59,6 +59,12 @@
         </div>
       </nav>
 
+<script>
+$(function(){
+  $('.alert').fadeOut(2000);
+
+});
+</script>
 
 
       <% if flash[:notice] %>
@@ -91,7 +97,7 @@ flash: {
             <%= link_to '広告掲載',"#" %>
           </li>
           <li>
-            <%= link_to '退会',"#" %>
+            <%= link_to '退会', retire_path %>
           </li>
           <li>
             <%= link_to '運営',"#" %>

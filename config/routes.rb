@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'users/:id' => 'users#show' #マイページ
-  
+
+  get 'retire', to:'users#retire'
   # "=>"は実行結果
 
   get 'offer_details/index'

@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :languages, through: :user_language_levels,
   dependent: :destroy  #languageにlevelをnestするため
   accepts_nested_attributes_for :user_language_levels, allow_destroy: true, reject_if: :all_blank
-  has_many :offers
+  has_many :offers, dependent: :destroy
 
 end
 
