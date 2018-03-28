@@ -20,4 +20,8 @@
 /node_modules
 /yarn-error.log
 
+# myignore
+/vendor/bundle
+/public/uploads
+
 .byebug_history

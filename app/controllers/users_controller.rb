@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   def new
     @user=User.new
+    @languages = Language.all
     2.times {@user.languages.build}
+    debugger
     #デフォルトで2つの入力欄を表示
     #Userクラスからnewメソッドでインスタンスを生成してる。
     #Userクラスはモデルuser.rbの中にあり、別のクラスのApplicationRecordの継承を受けている。
@@ -12,6 +14,8 @@ class UsersController < ApplicationController
   end
 
   def create
+    debugger
+
     @user=User.new(user_params)#strong parameterに定義されている
 #再度@userにUserテーブルを構築。その際引数をuser_paramsメソッドにすることで、
 #viewで格納したparamsの値が入ったテーブルを引数とすることができる。
