@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-offset-4 col-md-4 users-new-container">
         <h1 class="text-center text-white">Working Holiday Mate 登録フォーム</h1>
-        <%= form_for @user do |f| %>
+        <%= form_for :user,url:users_path do |f| %>
           <div class="form-group">
             <%= f.label :nickname, class: 'text-white' %>
             <%= f.text_field :nickname, class: 'form-control' %>
@@ -79,10 +79,8 @@
 
           <div class="form-group">
             <%= f.label :languages, "話したい言語" %><br/>
-            <%= f.fields_for :languages do |builder| %>
-              <%= render "language_fields", f: builder %>
-            <% end %>
-            <%= link_to_add_fields "追加", f, :languages %>
+            <%= f.select :language_id, options_for_select(Language.pluck(:language,:id)) %>
+            <%= f.select :level, options_for_select([["全く話せない",1],["片言でなら",2],["日常会話OK",3],["ビジネスで使ってる",4],["ネイティヴ",5]]) %>
           </div>
 
           <!-- language_usersをlanguegesに紐づけて並列表示 -->
