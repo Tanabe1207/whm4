@@ -1,9 +1,10 @@
 class MakobangMailer < ApplicationMailer
 
 
-  def received_email(inquiry)
-    @inquiry = inquiry
+  def received_email(x)
 
-    mail (to: @inquiry, subject:'お問合せを承りました')
+    @inquiry_for_mail = x
+
+    mail (to: @inquiry_for_mail.email, subject:'お問合せを承りました')
   end
 end

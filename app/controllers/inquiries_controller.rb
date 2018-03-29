@@ -8,22 +8,27 @@ class InquiriesController < ApplicationController
 
   def confirm
     #入力値のチェック
-    @inquiry = inquiry.new(params[:inquiry])
+    @inquiry = Inquiry.new(params_inquiry)
     if @inquiry.valid?
       #OKなら確認画面を表示
       render :confirm
     else
       #エラーなら入力画面再表示
-      render :confirm
+      render :index
     end
   end
 
     def thanks
       #メールの送信
-      @inquiry = Inquiry.new(params[:inquiry])
-      InquiryMailer.received_email(@inquiry).deliver
+      @inquiry = Inquiry.new(params_inquiry)
+      InquiryMailer.received_email(@inquiry).deliver_now
 
       #完了画面表示
       redner :thanks
+    end
+
+    private
+    def params_inquiry
+      params.require(:inquiry).permit(:name,:email,:message)
     end
 end
