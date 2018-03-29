@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   resources 'users'
   resources 'offers'
 
+  get 'inquiry', to:'inquiry#index'
+  post 'inquiry/confirm', to:'inquiry#confirm'
+  post 'inquiry/thanks', to:'iniquiry#thanks'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
