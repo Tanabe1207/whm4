@@ -14,6 +14,9 @@ class Offer < ApplicationRecord
 
   mount_uploader :offer_image, ImageUploader
 
+  has_many :favorites
+  has_many :favorite_users, through: :favorites, source:'user'
+
 end
 
 # t.integer: user_id

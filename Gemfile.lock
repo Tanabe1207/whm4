@@ -97,6 +97,10 @@ GEM
       turbolinks
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.6.0)
+      launchy (~> 2.2)
     loofah (2.2.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -227,6 +231,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   jquery-ui-rails
+  letter_opener
   momentjs-rails (>= 2.9.0)
   nested_form_fields
   pry-byebug

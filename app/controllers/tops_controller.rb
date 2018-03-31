@@ -15,6 +15,8 @@ class TopsController < ApplicationController
     end
   end
 
+  # def create
+
   # private
   # def offer_params
   #   params.require(:offer).permit(:)

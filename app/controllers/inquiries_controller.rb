@@ -21,7 +21,7 @@ class InquiriesController < ApplicationController
     def thanks
       #メールの送信
       @inquiry = Inquiry.new(params_inquiry)
-      InquiryMailer.received_email(@inquiry).deliver_now
+      MakobangMailer.received_email(@inquiry).deliver_now
 
       #完了画面表示
       redner :thanks
