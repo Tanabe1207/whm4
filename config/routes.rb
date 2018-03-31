@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   get 'retire', to:'users#retire'
   # "=>"は実行結果
 
@@ -18,6 +17,7 @@ Rails.application.routes.draw do
   get 'inquiries/index'
   post 'inquiries/confirm', to:'inquiries#confirm'
   post 'inquiries/thanks', to:'inquiries#thanks'
+  get 'inquiries/thanks_page', to:'inquiries#thanks_page'
 
   post 'users/show', to: 'favorites#create'
 

@@ -24,8 +24,11 @@ class InquiriesController < ApplicationController
       MakobangMailer.received_email(@inquiry).deliver_now
 
       #完了画面表示
-      redner :thanks
+      redirect_to inquiries_thanks_page_path
     end
+
+  def thanks_page
+  end
 
     private
     def params_inquiry

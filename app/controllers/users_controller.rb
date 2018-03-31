@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
   def new
-    @user=User.new
-    2.times {@user.languages.build}
     #デフォルトで2つの入力欄を表示
     #Userクラスからnewメソッドでインスタンスを生成してる。
     #Userクラスはモデルuser.rbの中にあり、別のクラスのApplicationRecordの継承を受けている。
@@ -12,12 +10,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user=User.new(user_params)#strong parameterに定義されている
+    up = params[:user]
+    user=User.new(user_params)#strong parameterに定義されている
 #再度@userにUserテーブルを構築。その際引数をuser_paramsメソッドにすることで、
 #viewで格納したparamsの値が入ったテーブルを引数とすることができる。
 #routes.rbで、POSTメソッド（HTTPメソッドの一つ）POST	users	users#createを指示しているから、
 #createを実行するとデータがデータベースに保存される。
-    if @user.save
+    user.user_language_levels = [UserLanguageLevel.new(user:user,language_id:up[:language_id],level:up[:level])]
+    # debugger
+    if user.save
       redirect_to root_path, notice:'登録が完了しました'#saveできたらroot pathに飛ぶの意
     else
       flash.now[:alert]="登録に失敗しました"#noticeとalertは自動的にRailsに格納されているflashという変数の中に入ります。
