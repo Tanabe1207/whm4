@@ -27,9 +27,6 @@ class InquiriesController < ApplicationController
       redirect_to inquiries_thanks_page_path
     end
 
-  def thanks_page
-  end
-
     private
     def params_inquiry
       params.require(:inquiry).permit(:name,:email,:message)
