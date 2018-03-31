@@ -29,12 +29,14 @@
           <%=image_tag 'icons/favorite.png' %>
         </div>
         <div class="contact-icon">
-          <%=image_tag 'icons/contact.png' %>
+          <%= link_to rooms_show_path do %>
+          <%= image_tag 'icons/contact.png' %>
+          <% end %>
         </div>
       </div>
 
       <div class="offer-bottom">
-        <%= link_to(offer_details_index_path(user_id: offer.user.id)) do %>
+        <%= link_to @offer_details.user do %>
         <div class="col-md-4 offer-bottom-left">
           <div class="offer-bottom-left-top">
             <%= image_tag @offer_details.user.my_image.url %>

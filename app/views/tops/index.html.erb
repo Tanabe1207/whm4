@@ -1,6 +1,7 @@
 
 <div class="main">
   <div class="offer">
+    <% if logged_in? || !@offer.nil? %>
     <% @offer.each do |offer| %>
     <!-- 募集案件 -->
     <div class="row">
@@ -20,7 +21,7 @@
               <%# end %>
             </div>
             <div class="bottom-of-left">
-               
+
                 <div class="flag">
                   <% case offer.user.nationality %>
                     <% when "Japan" then %>
@@ -79,6 +80,7 @@
       <% end %>
       </div>
     </div>
+    <% end %>
     <% end %>
   </div>
 </div>

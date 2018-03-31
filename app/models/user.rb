@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   has_many :user_language_levels, foreign_key: 'user_id'
   accepts_nested_attributes_for :user_language_levels, allow_destroy: true, reject_if: :all_blank
-  has_many :offers
+  has_many :offers, dependent: :destroy
 
 end
 

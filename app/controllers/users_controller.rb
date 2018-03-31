@@ -31,8 +31,34 @@ class UsersController < ApplicationController
     #ログインユーザーのレコードの取得
     @user_my_page = User.find(params[:id])
     #なお、findはidのみを引数に取るメソッド
-
   end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      redirect_to controller: 'users', action: 'show', id:current_user, notice:'ユーザー情報を更新しました'
+    else
+      flash.now[:alert]="登録に失敗しました"
+      render :edit
+    end
+  end
+
+  def retire
+  end
+
+  def destroy
+    if current_user.destroy
+      reset_session
+      redirect_to root_path, notice:'退会が完了しました'
+    else
+      render :retire
+    end
+  end
+
 
 
   private
