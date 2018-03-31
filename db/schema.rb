@@ -10,17 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180329065632) do
-
-  create_table "inquiries", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20180328002254) do
 
   create_table "languages", force: :cascade do |t|
-    t.integer "user_id"
     t.string "language"
-    t.integer "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

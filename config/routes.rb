@@ -1,5 +1,4 @@
-Rails.application.routes.draw do
-
+Rails.application.routes.draw do  
 
   get 'retire', to:'users#retire'
   # "=>"は実行結果
