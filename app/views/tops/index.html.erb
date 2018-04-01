@@ -74,7 +74,15 @@
             </li>
           </div>
               <li>趣味　<%= offer.user.hobby %></li>
+              <li id="offer-<%= offer.id %>" data-offer-id="<%= offer.id %>">
+                <span class="timestanp">
+                </span>
+              <%= render "favorites/favorite", offer: offer %>
+              </li>
+
           </ul>
+
+
         </div>
         <!-- media -->
       <% end %>

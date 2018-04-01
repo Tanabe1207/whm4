@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
   #||= は左辺が未定義もしくは偽なら代入の意味
   end
 
+  def current_user?(user)
+    user == current_user
+  end
+
   def logged_in?
     !current_user.nil?
     #.nil?メソッドで上で定義したcurrent_userがnilならtrueを返すが、「！」で

@@ -20,6 +20,5 @@ user = User.new nickname: "Hashi Hiroki", mail: "test@mail.com", password:"test"
 l = [UserLanguageLevel.new(user:user, language:Language.first, level:5), UserLanguageLevel.new(user: user, language:Language.last, level:3)]
 user.user_language_levels = l
 
-#debugger
 
 user.save

@@ -1,5 +1,10 @@
 module ApplicationHelper
 
+# ユーザーがログイン済みであればtrueを返す
+  def current_user?(user)
+    user == current_user
+  end
+
   def current_user
   #現在ログインしているuserを返すメソッド
   #ゲッター。ゲッターはインスタンス変数の値を取得するためのメソッド

@@ -14,8 +14,21 @@ class Offer < ApplicationRecord
 
   mount_uploader :offer_image, ImageUploader
 
-  has_many :favorites
+  has_many :favorites, dependent: :destrooy #userがいなくなった時に自動的に言いいねも削除
   has_many :favorite_users, through: :favorites, source:'user'
+
+  def kininaru(user)
+    favorites.create(user_id: user.id)
+  end
+  # user_idを引数user.idで定義→favoriteモデルのuser_idをcreateするメソッド。
+
+  def unkininaru(user)
+    favorites.find_by(user_id: user.id).destroy
+  end
+
+  def kininaru?(user)
+    favorite_users.include?(user)
+  end
 
 end
 

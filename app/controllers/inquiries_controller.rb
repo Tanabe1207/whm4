@@ -21,10 +21,10 @@ class InquiriesController < ApplicationController
     def thanks
       #メールの送信
       @inquiry = Inquiry.new(params_inquiry)
+      # debugger
       MakobangMailer.received_email(@inquiry).deliver_now
-
       #完了画面表示
-      redirect_to inquiries_thanks_page_path
+      render 'thanks_page'
     end
 
     private

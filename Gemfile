@@ -63,6 +63,7 @@ group :development, :test do
   # Use jquery-UI as the JavaScript library
   gem 'jquery-ui-rails'
 
+  gem 'haml-rails'
 
 end
 

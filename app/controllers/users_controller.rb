@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: [:edit, :update]
+  before_action :correct_user,   only: [:edit, :update]
+
   def new
     #デフォルトで2つの入力欄を表示
     #Userクラスからnewメソッドでインスタンスを生成してる。
@@ -17,7 +20,7 @@ class UsersController < ApplicationController
 #routes.rbで、POSTメソッド（HTTPメソッドの一つ）POST	users	users#createを指示しているから、
 #createを実行するとデータがデータベースに保存される。
     user.user_language_levels = [UserLanguageLevel.new(user:user,language_id:up[:language_id],level:up[:level])]
-    # debugger
+
     if user.save
       redirect_to root_path, notice:'登録が完了しました'#saveできたらroot pathに飛ぶの意
     else
@@ -59,8 +62,6 @@ class UsersController < ApplicationController
     end
   end
 
-
-
   private
   #viewから送られてきたデータは、paramsに格納されている。paramsを適切な各テーブルに挿入。
   #この作業がuser_paramsメソッド。
@@ -68,6 +69,24 @@ class UsersController < ApplicationController
       params.require(:user).permit(:nickname, :mail, :password, :password_confirmation, :my_image,
         :gender, :birthday, :nationality, :introduce_yourself,
          languages_attributes: [:id, :language, :level, :_destroy])
+    end
+
+    # beforeアクション
+    # ログイン済みユーザーかどうか確認
+    def logged_in_user
+      unless logged_in?
+        flash[:danger]="Please log in."
+        # redirect_to login_url
+      end
+    end
+
+    # 正しいユーザーかどうか確認
+    def correct_user
+      @user = User.find(params[:id])
+      unless  current_user?(@user)
+        flash[:danger] = "操作が受け付けられませんでした。"
+        redirect_to(root_url)
+      end
     end
     #  languages_attributesの前にコロンいらない？
 end
