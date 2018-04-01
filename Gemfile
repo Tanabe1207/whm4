@@ -65,6 +65,7 @@ group :development, :test do
 
   gem 'haml-rails'
 
+  gem 'counter_culture', '~> 1.8'
 end
 
 group :development do

@@ -14,7 +14,7 @@ class Offer < ApplicationRecord
 
   mount_uploader :offer_image, ImageUploader
 
-  has_many :favorites, dependent: :destrooy #userがいなくなった時に自動的に言いいねも削除
+  has_many :favorites, dependent: :destroy #userがいなくなった時に自動的に言いいねも削除
   has_many :favorite_users, through: :favorites, source:'user'
 
   def kininaru(user)

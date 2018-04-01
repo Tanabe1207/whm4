@@ -8,6 +8,7 @@ class FavoritesController < ApplicationController
         # kininiaru?メソッドにはcurrent_userが引数として入っている。
         # なので、「@offerのfavorite_usersがcurrrent_userでなければ」という意味。
         @offer.kininaru(current_user)
+        @offer.reload
         respond_to do |format|
           # これによりAjaxリクエストに対応
           format.html{redirect_to request.referrer || root_url}
@@ -21,6 +22,8 @@ class FavoritesController < ApplicationController
     if @offer.kininaru?(current_user)
       @offer.unkininaru(current_user)# Favoiteモデルからuser_idでcurrent_userのofferレコードを抽出。
       # unkininaruメソッドでそれをdestroy
+      @offer.reload
+
       respond_to do |format|
         format.html{redirect_to request.referrer || root_url}
         format.js
