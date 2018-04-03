@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180330084316) do
+ActiveRecord::Schema.define(version: 20180401084215) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20180330084316) do
     t.string "nickname"
     t.string "mail"
     t.string "my_image"
-    t.string "gender"
+    t.integer "gender"
     t.date "birthday"
     t.string "nationality"
     t.string "hobby"

@@ -82,15 +82,15 @@
           <div class="languages-container">
             <li class="talkable-languages-container">
               <p>話したい言語　</p>　
-              <% @offer_details.user.languages.each do |language| %>
-                <%= language %>
+              <% @offer_details.user.user_language_levels.each do |language| %>
+                <%= language.language %>
               <% end %>
             </li>
             <li class="talkable-languages-level-container">
               <p>level　</p>
-              <%# @offer_details.user.user_language_level.level.each do |level| %>
-              <%#= level %>
-              <%# end %>
+              <% @offer_details.user.user_language_levels.each do |level| %>
+              <%= level.level %>
+              <% end %>
             </li>
           </div>
             <li class="hobby-container">

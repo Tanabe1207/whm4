@@ -24,6 +24,7 @@
         </div>
         <div class="offer-bottom-left-bottom">
           <div class="flag">
+            debugger
             <% case @user_my_page.nationality %>
               <% when "Japan" then %>
               <%= image_tag 'icons/flags/jpy.png' %>
@@ -63,15 +64,15 @@
         <div class="languages-container">
           <li class="talkable-languages-container">
             <p>話したい言語　</p>　
-            <% @user_my_page.languages.each do |language| %>
-              <%= language %>
+            <% @user_my_page.user_language_levels.each do |language| %>
+              <%= language.language %>
             <% end %>
           </li>
           <li class="talkable-languages-level-container">
             <p>level　</p>
-            <%# @user_my_page.user_language_level.level.each do |level| %>
-            <%#= level %>
-            <%# end %>
+            <% @user_my_page.user_language_levels.each do |level| %>
+            <%= level.level %>
+            <% end %>
           </li>
         </div>
           <li class="hobby-container">
